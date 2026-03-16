@@ -1,0 +1,125 @@
+.compare-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.compare-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.compare-table-wrapper {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.compare-table th,
+.compare-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.compare-table thead th {
+  background: #f8fafc;
+  font-weight: 600;
+  color: #1e293b;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.compare-row-label {
+  font-weight: 600;
+  color: #64748b;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 140px;
+  background: #f8fafc;
+}
+
+.compare-product-header {
+  min-width: 200px;
+}
+
+.compare-product-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.compare-remove-btn {
+  padding: 4px 10px;
+  background: #fee2e2;
+  color: #dc2626;
+  border: none;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.compare-remove-btn:hover {
+  background: #fecaca;
+}
+
+.compare-cell {
+  color: #334155;
+}
+
+.best-value {
+  background: #f0fdf4;
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 64px 24px;
+  color: #64748b;
+}
+
+.empty-state p {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-primary { background: #3b82f6; color: #ffffff; }
+.btn-danger { background: #ef4444; color: #ffffff; }

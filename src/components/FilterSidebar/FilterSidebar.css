@@ -1,0 +1,98 @@
+.filter-sidebar {
+  width: 240px;
+  min-width: 240px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  align-self: flex-start;
+  position: sticky;
+  top: 72px;
+}
+
+.filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.filter-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.filter-clear-btn {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.filter-clear-btn:hover {
+  text-decoration: underline;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.filter-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.filter-section-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.filter-checkbox-label,
+.filter-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  cursor: pointer;
+  font-size: 13px;
+  color: #334155;
+}
+
+.filter-checkbox-label:hover,
+.filter-radio-label:hover {
+  color: #1e293b;
+}
+
+.filter-price-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-price-input {
+  width: 80px;
+  padding: 6px 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #1e293b;
+  outline: none;
+}
+
+.filter-price-input:focus {
+  border-color: #3b82f6;
+}
+
+.filter-price-sep {
+  color: #94a3b8;
+}

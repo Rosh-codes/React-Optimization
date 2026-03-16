@@ -1,0 +1,22 @@
+.catalogue-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px 80px 16px;
+}
+
+.catalogue-body {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.catalogue-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
