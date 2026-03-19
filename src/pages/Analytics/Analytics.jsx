@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import products from '../../data/products.json'
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
@@ -10,44 +10,65 @@ const CATEGORIES = ['Electronics', 'Clothing', 'Books', 'Food', 'Sports', 'Home'
 const PIE_COLORS = ['#10b981', '#f59e0b', '#ef4444']
 
 function Analytics() {
-  // INTENTIONALLY UNOPTIMIZED — all recalculates on every render
   const totalProducts = products.length
 
-  const totalValue = products.reduce((sum, p) => sum + p.price * p.stock, 0)
+  const totalValue = useMemo(
+    () => products.reduce((sum, p) => sum + p.price * p.stock, 0),
+    []
+  )
 
-  const averageRating = (
-    products.reduce((sum, p) => sum + p.rating, 0) / products.length
-  ).toFixed(2)
+  const averageRating = useMemo(
+    () => (products.reduce((sum, p) => sum + p.rating, 0) / products.length).toFixed(2),
+    []
+  )
 
-  const outOfStockCount = products.filter(p => p.stock === 0).length
+  const outOfStockCount = useMemo(
+    () => products.filter(p => p.stock === 0).length,
+    []
+  )
 
-  const productsByCategory = CATEGORIES.map(cat => ({
-    category: cat,
-    count: products.filter(p => p.category === cat).length
-  }))
+  const productsByCategory = useMemo(
+    () => CATEGORIES.map(cat => ({
+      category: cat,
+      count: products.filter(p => p.category === cat).length
+    })),
+    []
+  )
 
-  const stockStatusData = [
-    { name: 'In Stock', value: products.filter(p => p.stock > 100).length },
-    { name: 'Low Stock', value: products.filter(p => p.stock > 0 && p.stock <= 100).length },
-    { name: 'Out of Stock', value: products.filter(p => p.stock === 0).length }
-  ]
+  const stockStatusData = useMemo(
+    () => [
+      { name: 'In Stock', value: products.filter(p => p.stock > 100).length },
+      { name: 'Low Stock', value: products.filter(p => p.stock > 0 && p.stock <= 100).length },
+      { name: 'Out of Stock', value: products.filter(p => p.stock === 0).length }
+    ],
+    []
+  )
 
-  const avgPriceByCategory = CATEGORIES.map(cat => {
-    const catProducts = products.filter(p => p.category === cat)
-    const avg = catProducts.reduce((sum, p) => sum + p.price, 0) / catProducts.length
-    return { category: cat, avgPrice: parseFloat(avg.toFixed(2)) }
-  })
+  const avgPriceByCategory = useMemo(
+    () => CATEGORIES.map(cat => {
+      const catProducts = products.filter(p => p.category === cat)
+      const avg = catProducts.reduce((sum, p) => sum + p.price, 0) / catProducts.length
+      return { category: cat, avgPrice: parseFloat(avg.toFixed(2)) }
+    }),
+    []
+  )
 
-  const ratingBands = [
-    { band: '1–2', count: products.filter(p => p.rating >= 1 && p.rating < 2).length },
-    { band: '2–3', count: products.filter(p => p.rating >= 2 && p.rating < 3).length },
-    { band: '3–4', count: products.filter(p => p.rating >= 3 && p.rating < 4).length },
-    { band: '4–5', count: products.filter(p => p.rating >= 4 && p.rating <= 5).length }
-  ]
+  const ratingBands = useMemo(
+    () => [
+      { band: '1–2', count: products.filter(p => p.rating >= 1 && p.rating < 2).length },
+      { band: '2–3', count: products.filter(p => p.rating >= 2 && p.rating < 3).length },
+      { band: '3–4', count: products.filter(p => p.rating >= 3 && p.rating < 4).length },
+      { band: '4–5', count: products.filter(p => p.rating >= 4 && p.rating <= 5).length }
+    ],
+    []
+  )
 
-  const top20 = [...products]
-    .sort((a, b) => (b.price * b.stock) - (a.price * a.stock))
-    .slice(0, 20)
+  const top20 = useMemo(
+    () => [...products]
+      .sort((a, b) => (b.price * b.stock) - (a.price * a.stock))
+      .slice(0, 20),
+    []
+  )
 
   return (
     <div className="analytics-container">

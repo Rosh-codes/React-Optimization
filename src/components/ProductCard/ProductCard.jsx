@@ -79,4 +79,4 @@ function ProductCard({ product, isSaved, isCompared, compareCount, onSave, onCom
   )
 }
 
-export default ProductCard
+export default React.memo(ProductCard)
