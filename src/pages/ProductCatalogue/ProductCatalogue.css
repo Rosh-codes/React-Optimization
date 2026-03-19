@@ -20,3 +20,31 @@
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 16px;
 }
+
+.product-list-virtualized {
+  width: 100%;
+}
+
+.virtual-row {
+  box-sizing: border-box;
+  padding-bottom: 16px;
+}
+
+.virtual-row-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.virtual-cell {
+  min-width: 0;
+}
+
+.catalogue-empty {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+}
