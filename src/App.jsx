@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import './App.css'
 
-const ProductCatalogue = lazy(() => import('./pages/ProductCatalogue/ProductCatalogue'))
+import ProductCatalogue from './pages/ProductCatalogue/ProductCatalogue'
+
 const ProductDetail = lazy(() => import('./pages/ProductDetail/ProductDetail'))
 const Analytics = lazy(() => import('./pages/Analytics/Analytics'))
 const Saved = lazy(() => import('./pages/Saved/Saved'))
