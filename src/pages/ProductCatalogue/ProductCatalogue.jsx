@@ -152,14 +152,14 @@ function ProductCatalogue({ savedIds, setSavedIds, compareIds, setCompareIds }) 
   }, [])
 
   const rowCount = Math.ceil(filteredProducts.length / columnCount)
-  const virtualizedData = {
+  const virtualizedData = useMemo(() => ({
     products: filteredProducts,
     columnCount,
     savedIds,
     compareIds,
     onSave: handleSave,
     onCompare: handleCompare,
-  }
+  }), [filteredProducts, columnCount, savedIds, compareIds, handleSave, handleCompare])
 
   return (
     <div className="catalogue-container">
